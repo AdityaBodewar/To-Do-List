@@ -10,6 +10,10 @@ const DataSchema=mongoose.Schema({
     Description:{
         type:String,
         required:true,
+    },
+    Status:{
+        type:Boolean,
+        default:false,
     }
 });
 

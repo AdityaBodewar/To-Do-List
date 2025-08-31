@@ -43,6 +43,30 @@ app.post("/add_data",async (req,res)=>{
     }
 })
 
+app.put("/update_status/:id/:status",async (req,res)=>{
+try {
+  const {id,status}=req.params;
+if(status=="true")
+{
+  await  Data.findByIdAndUpdate(id,{Status:false});
+}
+else{
+
+  await  Data.findByIdAndUpdate(id,{Status:true});  
+
+}
+
+
+
+  
+} catch (error) {
+  
+  console.log(error);
+}
+
+
+});
+
 app.get("/get_data",async(req,res)=>{
 
     try {
